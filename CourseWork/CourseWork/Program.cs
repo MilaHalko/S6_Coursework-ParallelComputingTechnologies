@@ -29,19 +29,34 @@ graph.AddEdge(2, 3, 4);
 Stopwatch stopwatch = new Stopwatch();
 stopwatch.Start();
 
-// SequentialKruskal sequentialKruskal = new SequentialKruskal();
-// sequentialKruskal.CalculateMST(graph);
+SequentialKruskal sequentialKruskal = new SequentialKruskal();
+List<Edge> result = sequentialKruskal.CalculateMST(graph);
 
 ParallelSortingKruskal parallelSortingKruskal = new ParallelSortingKruskal();
 List<Edge> resultPSK = parallelSortingKruskal.CalculateMST(graph);
 
-// FilterKruskal filterKruskal = new FilterKruskal();
-// filterKruskal.CalculateMST(graph);
+FilterKruskal filterKruskal = new FilterKruskal();
+List<Edge> resultFK = filterKruskal.CalculateMST(graph);
 
 stopwatch.Stop();
-Console.WriteLine($"ParallelSortingKruskal: {stopwatch.ElapsedMilliseconds} ms");
+// Console.WriteLine($"ParallelSortingKruskal: {stopwatch.ElapsedMilliseconds} ms");
 
+Console.Out.WriteLine("SequentialKruskal:");
+foreach(Edge edge in result)
+{
+    Console.WriteLine($"{edge.Source} -- {edge.Destination} == {edge.Weight}");
+}
+
+Console.Out.WriteLine("");
+
+Console.Out.WriteLine("ParallelSortingKruskal:");
 foreach(Edge edge in resultPSK)
 {
-    Console.WriteLine($"{edge.Source} -- {edge.Des tination} == {edge.Weight}");
+    Console.WriteLine($"{edge.Source} -- {edge.Destination} == {edge.Weight}");
+}
+
+Console.Out.WriteLine("\nFilterKruskal:");
+foreach(Edge edge in resultFK)
+{
+    Console.WriteLine($"{edge.Source} -- {edge.Destination} == {edge.Weight}");
 }

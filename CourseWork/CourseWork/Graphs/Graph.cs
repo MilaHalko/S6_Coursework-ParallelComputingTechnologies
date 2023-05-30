@@ -32,7 +32,7 @@ public class Graph
 
     public int Find(Subset[] subsets, int i)
     {
-        lock (subsets)
+        lock (this)
         {
             if (subsets[i].Parent != i)
                 subsets[i].Parent = Find(subsets, subsets[i].Parent);
@@ -42,7 +42,7 @@ public class Graph
 
     public void Union(Subset[] subsets, int x, int y)
     {
-        lock (subsets)
+        lock (this)
         {
             int xRoot = Find(subsets, x);
             int yRoot = Find(subsets, y);
