@@ -24,25 +24,8 @@ public class ParallelSortingKruskal : IKruskalAlgorithm
             };
         }
 
-        // while ( e < verticesCount - 1 && i < orderedEdges.Count)
-        // {
-        //     Edge nextEdge = orderedEdges.;/*edges[i++];*//**/
-        //     // var a = 
-        //     int x = graph.Find(subsets, nextEdge.Source);
-        //     int y = graph.Find(subsets, nextEdge.Destination);
-        //
-        //     if (x != y)
-        //     {
-        //         result.Add(nextEdge);
-        //         graph.Union(subsets, x, y);
-        //         e++;
-        //     }
-        // }
-
         foreach (var edge in orderedEdges)
         {
-            // Edge nextEdge = orderedEdges.;/*edges[i++];*//**/
-            // var a = 
             if (e >= verticesCount - 1)
             {
                 break;
