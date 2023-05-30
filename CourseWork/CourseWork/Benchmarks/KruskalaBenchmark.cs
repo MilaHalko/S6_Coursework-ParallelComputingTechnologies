@@ -7,8 +7,8 @@ namespace CourseWork.Benchmarks;
 [MemoryDiagnoser(), MinIterationCount(3), MaxIterationCount(4)]
 public class KruskalaBenchmark
 {
-    [Params(10,100,500,1000,1500,2000,2500)]
-    public int VerticesCount = 1000;
+    [Params(/*10,100,500,1000,1500,2000,2500, */3000, 3500)]
+    public int VerticesCount = 5;
 
     private Graph _graph1;
     private Graph _graph2;

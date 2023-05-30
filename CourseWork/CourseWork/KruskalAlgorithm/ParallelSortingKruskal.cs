@@ -43,7 +43,7 @@ public class ParallelSortingKruskal : IKruskalAlgorithm
         {
             // Edge nextEdge = orderedEdges.;/*edges[i++];*//**/
             // var a = 
-            if (e < verticesCount - 1)
+            if (e >= verticesCount - 1)
             {
                 break;
             }
