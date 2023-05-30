@@ -21,6 +21,7 @@ public class FilterKruskal : IKruskalAlgorithm
                 Rank = 0
             };
         }
+        int e = 0;
 
         Parallel.ForEach(edges, (edge, state) =>
         {
@@ -31,6 +32,11 @@ public class FilterKruskal : IKruskalAlgorithm
             {
                 graph.Union(subsets, x, y);
                 result.Add(edge);
+                Interlocked.Increment(ref e);
+                if (e == verticesCount - 1)
+                {
+                    state.Break(); // Skip remaining edges since MST is already found
+                }
             }
             else
             {

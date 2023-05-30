@@ -13,6 +13,11 @@ public class Graph
         V = v;
         _edges = new List<Edge>();
     }
+    
+    public void Clear()
+    {
+        _edges.Clear();
+    }
 
     public void AddEdge(int source, int destination, int weight)
     {
